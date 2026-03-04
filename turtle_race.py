@@ -3,9 +3,9 @@ import random
 
 
 screen = Screen()
-screen.setup(width=500,height=400)
+screen.setup(width=2000,height=400)
 screen.listen()
-colors = ["red","orange","yellow","green","blue","purple"]
+colors = ["red","orange","yellow","green","blue","purple","skyblue"]
 # red, orange, yellow, green, blue, purple = Turtle("turtle"), Turtle("turtle"),Turtle("turtle"),Turtle("turtle"),Turtle("turtle"),Turtle("turtle")
 # turtles = {"red": red,
 #            "orange": orange,
@@ -29,7 +29,7 @@ for color in colors:
     turtles[color] = Turtle("turtle")
 
 x_pos = -((screen.window_width()/2) - 20)
-y_pos = -(((len(turtles)/2)-0.5) * 50)
+y_pos = int((len(turtles)/2) * (screen.window_height() / (len(turtles) + 1)))
 
 
 for trtl in turtles:
@@ -37,7 +37,8 @@ for trtl in turtles:
     new_turtle.color(trtl)
     new_turtle.penup()
     new_turtle.goto(x_pos,y_pos)
-    y_pos += 50
+    new_turtle.speed("fastest")
+    y_pos -= int(screen.window_height() / (len(turtles)))
 
 turtles[user_bet].pencolor("black")
 
