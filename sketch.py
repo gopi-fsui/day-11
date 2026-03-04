@@ -13,12 +13,12 @@ def backward():
 
 def counter_clockwise():
     # tam.left(20)
-    new_heading = tam.heading() + 10
+    new_heading = tam.heading() + 20
     tam.setheading(new_heading)
 
 def clockwise():
     # tam.right(20)
-    new_heading = tam.heading() - 10
+    new_heading = tam.heading() - 20
     tam.setheading(new_heading)
 
 
